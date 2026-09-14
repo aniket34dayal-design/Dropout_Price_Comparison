@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@theme {
+  --font-headline-lg: "Bricolage Grotesque", sans-serif;
+  --font-headline-md: "Bricolage Grotesque", sans-serif;
+  --font-headline-sm: "Bricolage Grotesque", sans-serif;
+  --font-body-lg: "Space Grotesk", sans-serif;
+  --font-body-md: "Space Grotesk", sans-serif;
+  --font-body-sm: "Space Grotesk", sans-serif;
+  --font-label-code-lg: "Space Mono", monospace;
+  --font-label-code-md: "Space Mono", monospace;
+  --font-label-code-sm: "Space Mono", monospace;
+
+  --color-surface: #131313;
+  --color-surface-dim: #131313;
+  --color-surface-bright: #3a3939;
+  --color-surface-container-lowest: #0e0e0e;
+  --color-surface-container-low: #1c1b1b;
+  --color-surface-container: #201f1f;
+  --color-surface-container-high: #2a2a2a;
+  --color-surface-container-highest: #353534;
+  --color-on-surface: #e5e2e1;
+  --color-on-surface-variant: #c4c9ac;
+  --color-outline: #8e9379;
+  --color-outline-variant: #444933;
+  --color-primary: #ffffff;
+  --color-on-primary: #283500;
+  --color-primary-container: #c3f400;
+  --color-on-primary-container: #556d00;
+  --color-secondary: #deb7ff;
+  --color-on-secondary: #4a007f;
+  --color-secondary-container: #6b13af;
+  --color-on-secondary-container: #d4a5ff;
+  --color-secondary-fixed: #f1dbff;
+  --color-tertiary: #ffffff;
+  --color-on-tertiary: #640036;
+  --color-tertiary-container: #ffd9e3;
+  --color-on-tertiary-container: #c3006e;
+  --color-tertiary-fixed: #ffd9e3;
+  --color-error: #ffb4ab;
+  --color-error-container: #93000a;
+}
+
+@layer base {
+  html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #131313;
+    color: #e5e2e1;
+    font-family: "Space Grotesk", sans-serif;
+  }
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+}
+
+/* Custom layout & spacing aliases matching Stitch design tokens */
+.px-gutter { padding-left: 1rem; padding-right: 1rem; }
+.py-gutter { padding-top: 1rem; padding-bottom: 1rem; }
+.p-gutter { padding: 1rem; }
+.-mx-gutter { margin-left: -1rem; margin-right: -1rem; }
+
+.gap-space-xs { gap: 0.25rem; }
+.gap-space-sm { gap: 0.5rem; }
+.gap-space-md { gap: 1rem; }
+.gap-space-lg { gap: 1.5rem; }
+.gap-space-xl { gap: 2.5rem; }
+
+.px-space-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
+.py-space-xs { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+
+.rounded-xs { border-radius: 0.125rem; }
+
+/* Font size and family utilities */
+.font-headline-lg { font-family: "Bricolage Grotesque", sans-serif; font-size: 36px; line-height: 40px; letter-spacing: -0.02em; font-weight: 800; }
+.font-headline-lg-mobile { font-family: "Bricolage Grotesque", sans-serif; font-size: 28px; line-height: 32px; letter-spacing: -0.02em; font-weight: 800; }
+.font-headline-md { font-family: "Bricolage Grotesque", sans-serif; font-size: 24px; line-height: 28px; letter-spacing: -0.01em; font-weight: 700; }
+.font-headline-sm { font-family: "Bricolage Grotesque", sans-serif; font-size: 20px; line-height: 24px; letter-spacing: 0em; font-weight: 700; }
+
+.font-body-lg { font-family: "Space Grotesk", sans-serif; font-size: 18px; line-height: 26px; letter-spacing: -0.01em; font-weight: 500; }
+.font-body-md { font-family: "Space Grotesk", sans-serif; font-size: 15px; line-height: 22px; letter-spacing: 0em; font-weight: 400; }
+.font-body-sm { font-family: "Space Grotesk", sans-serif; font-size: 13px; line-height: 18px; letter-spacing: 0.01em; font-weight: 400; }
+
+.font-label-code-lg { font-family: "Space Mono", monospace; font-size: 16px; line-height: 20px; letter-spacing: 0.02em; font-weight: 700; }
+.font-label-code-md { font-family: "Space Mono", monospace; font-size: 13px; line-height: 16px; letter-spacing: 0.05em; font-weight: 700; }
+.font-label-code-sm { font-family: "Space Mono", monospace; font-size: 11px; line-height: 14px; letter-spacing: 0.08em; font-weight: 700; }
+
+/* Marquee ribbon animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: inline-flex;
+  animation: marquee 16s linear infinite;
+}
+
+/* Radar scan animation */
+@keyframes radar-scan {
+  0% { transform: translateY(0%); opacity: 0.9; }
+  50% { opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0.9; }
+}
+
+.animate-radar-sweep {
+  animation: radar-scan 2s ease-in-out infinite alternate;
+}
+
+/* Hide scrollbar */
+.no-scrollbar::-webkit-scrollbar,
+::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

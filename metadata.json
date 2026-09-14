@@ -1,0 +1,6 @@
+{
+  "name": "DROPOUT",
+  "description": "Streetwear e-commerce price comparison & visual search radar app. Upload photos to compare prices across stores and find similar styles.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
